@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title>Paint</title>
+	<style>
+	body {
+		margin: 0;
+		overflow: hidden;
+	}
+	canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	.cont {
+		display: block;
+		position: absolute;
+		left: -19.6%;
+		background: #f3f3f3;
+		border-right: 1px solid #aaa;
+		width: 300px;
+		height: 100%;
+		transition: left 0.3s;
+	}
+	.cont > div {
+		position: relative;
+		padding: 10px;
+	}
+	#sldbtn {
+		display: inline-block;
+		position: absolute;
+		background: #888;
+		top: 0;
+		border-radius: 0 3px 3px 0;
+		right: -10%;
+		color: #fff;
+		cursor: pointer;
+		font-weight: bold;
+		padding: 10px;
+	}
+	input {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div class="cont">
+		<div>
+			<span id="sldbtn" onclick="hdsw()">></span>
+			<fieldset>
+				<legend>Canvas</legend>
+				<input type="color" value="#ffffff" name="ccolor">
+				Scale
+				<input type="range" min=0.2 max=3 value=1 step=0.02 name="cs"/>
+			</fieldset>
+			<fieldset>
+				<legend>Brush</legend>
+				<input type="color" value="#000000" name="bc">
+				Size
+				<input type="range" min=1 max=100 value=5 name="bs">
+			</fieldset>
+		</div>
+	</div>
+	<canvas></canvas>
+	<canvas></canvas>
+	<script src="js.js"></script>
+</body>
+</html>
